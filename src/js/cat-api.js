@@ -1,6 +1,12 @@
+import Notiflix from 'notiflix';
+import SlimSelect from 'slim-select'
+
 const select = document.querySelector('.breed-select');
 const loader = document.querySelector('.loader');
 const err = document.querySelector('.error');
+// new SlimSelect({
+//     select: '#selectElement'
+//   })
 
 export let storedBreeds = [];
 
@@ -39,8 +45,8 @@ export function fetchBreeds() {
       }
    })
    .catch(function(error) {
-      console.log(error);
-      err.style.display = 'block';
+      Notiflix.Notify.failure('Oops! Something went wrong! Try reloading the page!');
+    //   err.style.display = 'block';
    });
 }
 
@@ -66,8 +72,9 @@ export function fetchCatByBreed() {
        showBreedImage(img_kat, id_kat);
     })
     .catch(function(error) {
-       console.log(error);
-       err.style.display = 'block';
+    //    console.log(error);
+       Notiflix.Notify.failure('Oops! Something went wrong! Try reloading the page!');
+    //    err.style.display = 'block';
     });
  }
 
