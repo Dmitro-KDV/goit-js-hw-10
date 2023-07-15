@@ -17,7 +17,7 @@ export function fetchBreeds() {
 
     let url = `https://api.thecatapi.com/v1/breeds`;
     const api_key = "live_nwBBH9iYGELMsf7Elhlx9ow0Jh4PNBpfYYumTvhoU32Nk0m5NqDiDomOVKJzKcp1";
-    loader.style.display = 'blok';
+
    return fetch(url,{headers: {
          'x-api-key': api_key
       }})
@@ -35,6 +35,7 @@ export function fetchBreeds() {
       storedBreeds = data;
 
       for (let i = 0; i < storedBreeds.length; i++) {
+        
       const breed = storedBreeds[i];
       let option = document.createElement('option');
       
@@ -46,7 +47,6 @@ export function fetchBreeds() {
    })
    .catch(function(error) {
       Notiflix.Notify.failure('Oops! Something went wrong! Try reloading the page!');
-    //   err.style.display = 'block';
    });
 }
 
@@ -72,9 +72,7 @@ export function fetchCatByBreed() {
        showBreedImage(img_kat, id_kat);
     })
     .catch(function(error) {
-    //    console.log(error);
        Notiflix.Notify.failure('Oops! Something went wrong! Try reloading the page!');
-    //    err.style.display = 'block';
     });
  }
 

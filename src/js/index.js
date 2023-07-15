@@ -6,7 +6,6 @@ const select = document.querySelector('.breed-select');
 const loader = document.querySelector('.loader');
 const err = document.querySelector('.error');
 
-loader.style.display = 'none';
 err.style.display = 'none';
 
 fetchBreeds();
